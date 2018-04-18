@@ -37,8 +37,73 @@
   }
 </style>
 
-<button></button>
+<button>OK</button>
 <script>
+
+  const divs = document.querySelectorAll('div');
+
+  const button = document.querySelector('button');
+
+
+
+  function logText(e) {
+    console.log(this.classList.value);
+
+  }
+
+  divs.forEach(div => div.addEventListener('click', logText, {
+    capture: false,
+    once: true//it will run only once
+  }));
+
+  button.addEventListener('click', ()=> {
+    console.log("click!");
+  }, {
+    once: true
+  });
+
+    var words = "ala lubi sex";
+
+    function titleCase(str) {
+       str = str.toLowerCase().split(' ');
+
+       for(var i = 0; i < str.length; i++){
+            str[i] = str[i].split('');
+            str[i][0] = str[i][0].toUpperCase();
+            str[i] = str[i].join('');
+       }
+       return str.join(' ');
+    }
+
+
+
+    (function() {
+        'use strict';
+
+    }());
+
+
+
+    function upperCaseFirstLetter(fst) {
+      fst = fst.toLowerCase().split(' ');//tworzy aray z poszczególnymi słowami
+      for (var i = 0; i < fst.length; i++) {
+        fst[i] = fst[i].split('');
+        fst[i][0] = fst[i][0].toUpperCase();
+        fst[i] = fst[i].join('');
+      }
+      return fst.join(' ');
+    }
+console.log(upperCaseFirstLetter(words));
+
+function strong(num) {
+  var result = 1;
+  for (var i = 1; i <= num; i++) {
+    result *= i;
+  }
+  return console.log(`Silnia z ${num} jest równa ${result}`);
+}
+var number = 5;
+console.log(strong(number));
 
 </script>
 </body>
